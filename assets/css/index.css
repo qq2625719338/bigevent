@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+.img-fluid{
+    width: 40px;
+    height: 40px;
+}
+.col-1.gr:hover{
+    cursor: pointer;
+border-bottom: 5px solid #58d88e!important;
+}
+/* .text-muted:hover{color: #f4f5f6!important} */
+.dropdown-menu.gr{
+    font-size: 14px;
+    top: 26px!important;
+    left: -62px!important;
+} 

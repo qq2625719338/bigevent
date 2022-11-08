@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/lib/bootstrap-5.1.3-dist/css/bootstrap.min.css">
+    <script src="../assets/lib/jq.js"></script>
+    <script src="../assets/lib/echarts-5.3.3/dist/echarts.min.js"></script>
+    <script src="../assets/lib/echarts-5.3.3/"></script>
+    <title>图表统计</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body {
+  background-color: #f2f3f5;
+}
+</style>
+<body>
+    <div class="container-fluid mb-3">
+   <div class="row">
+    <div class="col-sm-6 col-md-3 text-center ">
+       <div class="span  bg-body  d-flex flex-column" style="height: 100px">
+        <p class="h-75 m-0 d-flex fs-1 align-items-center justify-content-center align-bottom text-danger">10015<span class="ms-1 fs-6">篇</span></p>
+        <p class="m-0 bg-secondary w-100 text-light flex-grow-1 lh-lg" style="font-size:14px">总文章数</p>
+       </div>
+    </div>
+    <div class="col-sm-6 col-md-3 text-center ">
+       <div class="span  bg-body  d-flex flex-column" style="height: 100px">
+        <p class="h-75 m-0 d-flex fs-1 align-items-center justify-content-center align-bottom text-warning">123<span class="ms-1 fs-6">篇</span></p>
+        <p class="m-0 bg-secondary w-100 text-light flex-grow-1 lh-lg" style="font-size:14px">日新增文章数</p>
+       </div>
+    </div>
+    <div class="col-sm-6 col-md-3 text-center ">
+       <div class="span  bg-body  d-flex flex-column" style="height: 100px">
+        <p class="h-75 m-0 d-flex fs-1 align-items-center justify-content-center align-bottom text-info">35<span class="ms-1 fs-6">条</span></p>
+        <p class="m-0 bg-secondary w-100 text-light flex-grow-1 lh-lg" style="font-size:14px">评论总数</p>
+       </div>
+    </div>
+    <div class="col-sm-6 col-md-3 text-center ">
+       <div class="span  bg-body  d-flex flex-column" style="height: 100px">
+        <p class="h-75 m-0 d-flex fs-1 align-items-center justify-content-center align-bottom text-success">123<span class="ms-1 fs-6">条</span></p>
+        <p class="m-0 bg-secondary w-100 text-light flex-grow-1 lh-lg" style="font-size:14px">总文章数</p>
+       </div>
+    </div>
+
+ 
+   </div>
+    </div>
+    <div class="container-fluid ">
+        <div class="row" >
+            <div class="col-lg-8 col-12">
+                <div class="yxz bg-body" style="height: 350px"></div>
+            </div>
+            <div class="col-lg-4 col-12  my-3  my-lg-0">
+                <div class="flwz bg-body" style="height: 350px"></div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid mt-3 ">
+      <div class="row">
+        <div class="col-12">
+          <div class="zh bg-body" style="height: 350px"></div>
+        </div>
+      </div>
+    </div>
+</body>
+<script>
+    (function(){
+        let myChart = echarts.init(document.querySelector('.yxz'));
+    let option = {
+  toolbox:{
+    show:true,
+    feature:{
+      dataView:{show:true,
+        title:'数据视图',
+        lang : ['数据视图', '关闭', '刷新'],
+      },
+      
+       magicType: {
+        title:{line:'切换为折线图',bar:'切换为柱状图'},
+        type: ['line', 'bar',]
+    },
+    restore:{show:true,title:'还原',},
+      saveAsImage:{show:true,title:'保存图片'}, },},
+  title:{
+    text:'月新增文章数',
+    left: 'center',
+        top: '10'
+  },
+    tooltip: {
+      textStyle:{
+        color:'#fff'
+      },
+      backgroundColor:'rgba(0,0,0,.5)',
+      borderColor:'rgba(0,0,0,.0)',
+      axisPointer:{
+        lineStyle:{
+          color:'black',
+          type:'solid'
+        }
+      },
+    trigger: 'axis'
+  },
+ legend: {
+    data: ['新增文章'],
+     top: '40',
+  },
+  grid:{
+    show:true,
+    height:220,
+      x: 50,
+        x2: 50,
+        y: 80,
+  },
+  xAxis: {
+    boundaryGap: false,
+    type: 'category',
+    name:'日',
+    nameTextStyle:{
+      fontWeight:'600',
+    },
+    axisLine:{
+      lineStyle:{color:'black'}
+    },
+   axisTick:{
+    alignWithLabel:true
+   },
+    data: ['2022-04-01','2022-04-02','2022-04-03','2022-04-04','2022-04-05','2022-04-06','2022-04-07','2022-04-08','2022-04-09','2022-04-10','2022-04-11','2022-04-12','2022-04-13','2022-04-14','2022-04-15','2022-04-16','2022-04-17','2022-04-18','2022-04-19','2022-04-20','2022-04-21','2022-04-22','2022-04-23','2022-04-24','2022-04-25','2022-04-26','2022-04-27','2022-04-28','2022-05-01']
+  },
+  yAxis: {
+  
+     name:'月新增文章数',
+     nameTextStyle:{
+      fontWeight:'600',
+    },
+    axisLine:{
+      show:true,
+          lineStyle:{color:'black'}
+    },
+    axisTick:{
+      show:true
+    },
+     nameGap:20,
+    type: 'value'
+  },
+  
+ 
+  series: [
+    {
+      name:'新增文章',
+      data: [36,52,78,85,65,72,88,64,72,90,96,100,102,110,123,100,132,146,200,180,163,110,80,82,70,65,54,40,45,38],
+      type: 'line',
+      areaStyle:{
+          color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+            offset: 0,
+            color: 'rgba(255,136,0,0.39)'
+          }, {
+            offset: .34,
+            color: 'rgba(255,180,0,0.25)'
+          }, {
+            offset: 1,
+            color: 'rgba(255,222,0,0.00)'
+          }])
+      },
+      lineStyle:{
+    color:'#ff8800',
+  },
+  itemStyle:{
+    color:'#ff8800'
+  },
+  
+  emphasis:{
+    scale:2
+  },
+  smooth:true,
+    }
+    
+  ]}
+  myChart.setOption(option);
+    }());
+
+(function(){
+    let myChart = echarts.init(document.querySelector('.flwz'));
+    let option = {
+  tooltip: {
+    trigger: 'item',
+    textStyle:{
+        color:'#fff'
+      },
+      backgroundColor:'rgba(0,0,0,.8)',
+      borderColor:'rgba(0,0,0,.0)',
+    formatter: "{a} <br/>{b} : {c} ({d}%)"
+  },
+
+   title:{
+    text:'分类文章数量比',
+    left: 'center',
+        top: '10'
+  },
+  toolbox:{
+    show:true,
+    feature:{
+      dataView:{show:true,
+        title:'数据视图',
+        lang : ['数据视图', '关闭', '刷新'],
+      },
+      
+    restore:{show:true,title:'还原',},
+      saveAsImage:{show:true,title:'保存图片'},},
+  },
+  legend: {
+    top: '13%',
+    left: 'center'
+  },
+  series: [
+    {
+      name: '访问来源',
+      type: 'pie',
+       radius: ['45%', '60%'],
+       center: ['50%', '55%'],
+      data: [
+        { value: 180, name: '趣美味' },
+        { value: 300, name: '奇趣事' },
+        { value: 100, name: '会生活' },
+        { value: 260, name: '爱旅行' },
+      ]
+    }
+  ]
+};
+    myChart.setOption(option);
+}());
+
+(function(){
+  let myChart = echarts.init(document.querySelector('.zh'));
+  let option = {
+  grid:{
+    show:true,
+    left:50,
+    right:20,
+    bottom:60,
+    height:220,
+  },
+
+  tooltip: {
+    trigger: 'axis',
+    textStyle:{
+        color:'#fff'
+      },
+      backgroundColor:'rgba(0,0,0,.5)',
+      borderColor:'rgba(0,0,0,.0)',
+    axisPointer: {
+      type: 'line',
+      lineStyle:{type:"solid",color:'black'}
+    }
+  },
+    title:{
+    text:'文章访问量',
+    left: 'center',
+        top: '10'
+  },
+  legend: {
+    top: '40',
+    data: ['奇趣事', '会生活', '爱旅行', '趣美味']
+  },
+ toolbox:{
+    show:true,
+    feature:{
+      dataView:{show:true,
+        title:'数据视图',
+        lang : ['数据视图', '关闭', '刷新'],
+      },
+      
+       magicType: {
+        title:{line:'切换为折线图',bar:'切换为柱状图'},
+        type: ['line', 'bar',]
+    },
+    restore:{show:true,title:'还原',},
+      saveAsImage:{show:true,title:'保存图片'}, },},
+  xAxis: [
+    {
+      type: 'category',
+    axisLine:{
+      lineStyle:{color:'black'}
+    },
+      data: ['1月', '2月', '3月', '4月', '5月']
+    }
+  ],
+   yAxis: {
+      name:'访问量',
+    axisLine:{
+      show:true,
+          lineStyle:{color:'black'}
+    },
+    axisTick:{
+      show:true
+    },
+     nameGap:20,
+    type: 'value'
+  },
+  series: [ {
+      name: '奇趣事',
+       barWidth: 20,
+    itemStyle: {
+            normal: { areaStyle: { type: 'default' }, color: '#fd956a' }
+          },
+      type: 'bar',
+      emphasis: {
+        disabled:true
+      },
+      data: [800,708,920,1090,1200]
+    },
+    {
+      name: '会生活',
+      type: 'bar',
+      barWidth: 20,
+       itemStyle: {
+            normal: { areaStyle: { type: 'default' }, color: '#2bb6db' }
+          },
+      emphasis: {
+        disabled:true,
+      },
+      data: [400,468,520,690,800]
+    },
+    {
+      name: '爱旅行',
+      barWidth: 20,
+      type: 'bar',
+       itemStyle: {
+            normal: { areaStyle: { type: 'default' }, color: '#13cfd5' }
+          },
+      emphasis: {
+        disabled:true,
+      },
+      data: [500,668,520,790,900]
+    },
+    {
+      name: '趣美味',
+      barWidth: 20,
+      type: 'bar',
+         itemStyle: {
+            normal: { areaStyle: { type: 'default' }, color: '#00ce68' }
+          },
+      emphasis: {
+        disabled:true,
+       
+      },
+      data: [600,508,720,890,1000]
+    }
+  ]
+};
+
+myChart.setOption(option);
+}())
+</script>
+</html>
