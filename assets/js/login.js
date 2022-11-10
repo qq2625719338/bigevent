@@ -1,9 +1,5 @@
 $(function(){
-    $.ajaxPrefilter(function(options) {
-        // 在发起真正的 Ajax 请求之前，统一拼接请求的根路径
-        // http://api-breakingnews-web.itheima.net
-        options.url = 'http://127.0.0.1' + options.url
-      })
+   
     $('.log-box a').click(function(){
         $('.log-box').hide()
         $('.reg-box').show()
@@ -17,7 +13,7 @@ $(function(){
         errorMessage: true,//如果为flase则不显示错误信息
         successClass: true,//如果为flase则不显示成功信息
         //可以使用英文与中文如果用英文使用en.json
-        language: 'https://emretulek.github.io/jbvalidator/dist/lang/en.json'
+        
     });
     var valid = validator.validator;
     //新的自定义验证方法
