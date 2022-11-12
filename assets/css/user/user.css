@@ -1,0 +1,9 @@
+.form-control{
+    outline: none!important;
+    border-color:#ced4da!important;
+        box-shadow:none!important;
+    }
+    .card,input,button[type="submit"],button[type="reset"]{
+        font-size: 14px!important;
+    }
+    

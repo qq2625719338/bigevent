@@ -10,9 +10,7 @@ if(options.url.substr(0,4)==='/my/'){
     options.url = 'http://api-breakingnews-web.itheima.net' + options.url
     // 无论失败还是成功 都会调用
 options.complete=function(e){
-    console.log(e.responseJSON.message);
     if(e.responseJSON.status===1&&e.responseJSON.message==='身份认证失败!'){
-        console.log(1);
         localStorage.removeItem('token')
         location.href='./login.html'
     }

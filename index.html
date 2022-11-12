@@ -12,10 +12,10 @@
 <body >
     <div class="container-fluid fixed-top bg-dark" style="height: 60px">
         <div class="row h-100 ">
-            <div class="col-3 me-auto">
+            <div class="col-md-3 col-1 col-sm-1   me-auto ">
                 <img src="./assets/images/logo.png" alt="">
             </div>
-            <div class="col-1 me-2 colse p-0 gr position-relative d-flex border-bottom border-dark border-5 justify-content-center align-items-center ">
+            <div class="col-md-1 col-2 col-sm-2   me-2 colse p-0 gr position-relative d-flex border-bottom border-dark border-5 justify-content-center align-items-center ">
                 <img class=" img-fluid rounded-circle" src="../bigevent/assets/images/sample.jpg" alt="" style="display: none;">
                 <!-- 头像 -->
             <span class=" tx bg-success   rounded-circle text-center text-light" style="width: 40px;height:40px;line-height: 40px;display: none;"></span>
@@ -24,15 +24,15 @@
    个人中心
     </a> 
     <ul class="dropdown-menu gr  position-absolute " >
-    <li><a class="dropdown-item" href="#">基本资料</a></li>
-    <li><a class="dropdown-item" href="#">更换密码</a></li>
-    <li><a class="dropdown-item" href="#">重置头像</a></li>
+    <li class="p-1"><a class="dropdown-item" target="sy" href="./user/user.html">基本资料</a></li>
+    <li class="p-1"><a class="dropdown-item" target="sy" href="./user/user_pwd.html">更换密码</a></li>
+    <li class="p-1"><a class="dropdown-item" target="sy" href="./user/user_img.html">重置头像</a></li>
     </ul>
     </div>
     
     
             </div>
-            <div class="col-1 gr  p-0 border-bottom close border-dark border-5 d-flex justify-content-center align-items-center">
+            <div class="col-2 col-sm-1 gr   p-0 border-bottom close border-dark border-5 d-flex justify-content-center align-items-center" style="cursor: pointer;">
                 <span class="iconfont icon-tuichu text-light fs-4 align-middle"></span>
                 <span class="text-light ms-1" style="font-size:12px">退出</span>
             </div>
@@ -87,13 +87,13 @@
 
     <div class="col-1 p-0 w-100" id="grzxz" style="display: none">
         <div class="grzx bg-dark text-light">
-            <a href="#" class="text-light  p-2 ps-4 d-block">
+            <a href="./user/user.html" target="sy" class="text-light  p-2 ps-4 d-block">
                 <span class="iconfont icon-ico- fs-5 align-middle"></span>
                 <span class="ms-1">基本资料</span></a>
-            <a href="#" class="text-light  p-2 ps-4 d-block">
+            <a href="./user/user_img.html" target="sy"  class="text-light  p-2 ps-4 d-block">
                 <span class="iconfont icon-ico- fs-5 align-middle"></span>
                 <span class="ms-1">更换头像</span></a>
-                <a href="#" class="text-light  p-2 ps-4 d-block">
+                <a href="./user/user_pwd.html" target="sy" class="text-light  p-2 ps-4 d-block">
                     <span class="iconfont icon-ico- fs-5 align-middle"></span>
                     <span class="ms-1">重置密码</span></a>       
         </div>
@@ -123,8 +123,10 @@
         </div>
         </div>
 </div>
-    
-    
+    <!-- 更新信息成功 -->
+<div class="alert gxcg alert-dark  alert-dismissible bg-dark position-fixed start-50 top-50 translate-middle w-25 lh-1 " role="alert" style="display: none">
+    <strong class="position-absolute start-50 top-50 translate-middle text-light">更新信息成功</strong>
+    </div>
 <script src="./assets/lib/jq.js"></script>
     <script src="./assets/lib/bootstrap-5.1.3-dist/js/bootstrap.bundle.js"></script>
     <script src="./assets/js/baseapi.js"></script>
