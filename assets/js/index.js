@@ -1,24 +1,7 @@
-$(function(){
-  let a=true
-$('#wzgl').click(function(){
-  if(a){
-    $('#wzglz').show()
-    a=false
-  }else{
-    $('#wzglz').hide()
-    a=true
-  }})})
 
-$(function(){
-  let a=true
-$('#grzx').click(function(){
-  if(a){
-    $('#grzxz').show()
-    a=false
-  }else{
-    $('#grzxz').hide()
-    a=true
-  }})})
+$('#wzgl').click(()=>$('#wzglz').toggle())
+
+$('#grzx').click(()=>$('#grzxz').toggle())
   
 // 更新头像和个人名称
   $(function(){

@@ -1,0 +1,52 @@
+.form-select{
+    width: auto;
+}
+.form-select:focus{
+    outline: none;
+border-color:#ced4da;
+box-shadow:none;
+}
+.dropdown-menu{
+    min-width: 100%!important;
+    font-size: 12px;
+}
+.page-link.active{
+    background-color: black!important;
+    color: white!important;
+}
+input:focus{
+outline: none;
+box-shadow:none;
+}
+.pagination a{
+    text-decoration: none;
+    display: inline-block;
+    border: 1px solid #e2e2e2;
+vertical-align: middle;
+padding: 0 15px;
+height: 28px;
+line-height: 28px;
+margin: 0 -1px 0 0;
+background-color: #fff;
+color: #333;
+font-size: 12px;
+}
+.pagination a:hover {
+color: #009688;
+}
+.page.active>a{
+background-color: #009688;
+color: #fff;
+border-radius: 2px;
+}
+.disabled>a{
+color: #d2d2d2 !important;
+cursor: not-allowed !important;
+}
+span{
+    white-space: nowrap;
+}
+tbody{
+    font-size: 14px!important;
+    white-space: nowrap;
+}

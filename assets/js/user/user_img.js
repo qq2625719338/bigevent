@@ -10,10 +10,10 @@ background:false,
   minCropBoxWidth:100,
   minCropBoxHeight:100,
 });
-$('input[type=file]').change(function(e){
+$('input[type=file]').change(e=>
     // 上传文件创建地址并更换图片地址
         cropper.replace(URL.createObjectURL(e.target.files[0]),false)
-})
+)
 // 调接口更新图片
 $('.btn-danger').click(function(){
     // 将 Canvas 画布上的内容，转化为 base64 格式的字符串

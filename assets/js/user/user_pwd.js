@@ -40,8 +40,8 @@ $(function(){
             }
         })
             })
-            $('button[type="reset"]').click(function(e){
-               e.preventDefault()
-               $('form.needs-validation')[0].reset()
-            })
+            // $('button[type="reset"]').click(function(e){
+            //    e.preventDefault()
+            //    $('form.needs-validation')[0].reset()
+            // })
 })

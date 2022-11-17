@@ -37,7 +37,7 @@ $(function(){
 e.preventDefault()
 if($(this).find('input').hasClass('is-invalid'))return ''
 // 注册
-       $.post('/api/reguser',{username:$(this).find('[name=username]').val(),password:$(this).find('[name=password]').val()},function(e){
+ $.post('/api/reguser',{username:$(this).find('[name=username]').val(),password:$(this).find('[name=password]').val()},function(e){
         if(e.status!==0){
             $('.alert.zcsb strong').text('注册失败')
           $('.alert.zcsb').show().delay(1000).hide(0);
